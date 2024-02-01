@@ -74,8 +74,9 @@ class GDirPathWidget(QWidget):
         self.w_center.set_text(ndir)
 
     def _on_cdir_clicked(self):
+        ndir = "." if not self.v() else self.v()
         cdir = QFileDialog.getExistingDirectory(
-            self, "选择文件路径", ".", QFileDialog.DontUseNativeDialog
+            self, "选择文件路径", ndir, QFileDialog.DontUseNativeDialog
         )
         if not cdir:
             return

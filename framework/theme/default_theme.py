@@ -41,17 +41,17 @@ class DTheme(object):
     g_no_color = "#f92f60"
 
     def __init__(self):
-        self.wi = Gss("QWidget")
-        self.wi.setv(f"background-color: {DTheme.g_bg_color};")
-        self.wi.setv(f"color: {DTheme.g_color};")
+        self.all0 = Gss("QWidget")
+        self.all0.setv(f"background-color: {DTheme.g_bg_color};")
+        self.all0.setv(f"color: {DTheme.g_color};")
 
-        self.btn = Gss("QPushButton")
-        self.btn.setv("border: none;")
-        self.btn.setv("border-radius: none;")
-        self.btn.setv(f"background-color: {DTheme.g_bg_color};")
-        self.btn.setv("padding: 0;")
-        self.btn.setv(f"background-color: {DTheme.g_hover_bg_color};", k="hover")
-        self.btn.setv(f"background-color: {DTheme.g_hover_bg_color};", k="pressed")
+        self.btn0 = Gss("QPushButton")
+        self.btn0.setv("border: none;")
+        self.btn0.setv("border-radius: none;")
+        self.btn0.setv(f"background-color: {DTheme.g_bg_color};")
+        self.btn0.setv("padding: 0;")
+        self.btn0.setv(f"background-color: {DTheme.g_hover_bg_color};", k="hover")
+        self.btn0.setv(f"background-color: {DTheme.g_hover_bg_color};", k="pressed")
 
         self.btn1 = Gss("GTitleButton")
         self.btn1.setv("background-color: transparent;")
@@ -182,14 +182,14 @@ class DTheme(object):
         #     "}",
         # ]
 
-        self.digf = Gss("QFileDialog")
-        self.digf.setv(f"background-color:{DTheme.g_bg_color};")
+        self.fdig = Gss("QFileDialog")
+        self.fdig.setv(f"background-color:{DTheme.g_bg_color};")
 
-        self.hedv = Gss("QHeaderView")
-        self.hedv.setv(f"color:{DTheme.g_color};")
-        self.hedv.setv(f"background-color:{DTheme.g_bg_color};")
-        self.hedv.setv(f"selection-color:{DTheme.g_color};")
-        self.hedv.setv(f"selection-background-color:{DTheme.g_bg_color};")
+        self.hdv0 = Gss("QHeaderView")
+        self.hdv0.setv(f"color:{DTheme.g_color};")
+        self.hdv0.setv(f"background-color:{DTheme.g_bg_color};")
+        self.hdv0.setv(f"selection-color:{DTheme.g_color};")
+        self.hdv0.setv(f"selection-background-color:{DTheme.g_bg_color};")
 
         self.hdvs = Gss("QHeaderView::section")
         self.hdvs.setv(f"border: none;")
