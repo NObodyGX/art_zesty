@@ -11,7 +11,7 @@ from framework.button.b_button import (
     GNOButton,
 )
 from framework.theme.worker import GThemeWorker
-from framework.widgets.dirpath_widget import GDirPathWidget
+from framework.widgets.dirpath_widget import GDirPathEdit
 from framework.window.b_window import GBaseWindow
 from framework.label.number_label import GNumberLabel
 
@@ -24,7 +24,7 @@ class GMWindow(GBaseWindow):
 
     def center_layout(self):
         layout = QVBoxLayout()
-        self.a1 = GDirPathWidget(self)
+        self.a1 = GDirPathEdit(self)
         self.a2 = GTMaxButton(self)
         self.a3 = GTOffButton(self)
         self.a4 = GOKButton(self)

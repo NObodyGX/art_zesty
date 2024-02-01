@@ -7,7 +7,7 @@ from framework.utils.u_worker import UWorker
 
 class DirPathEdit(QLineEdit):
     def __init__(self, parent=None):
-        self.p = parent  # type: GDirPathWidget
+        self.p = parent  # type: GDirPathEdit
         super().__init__(parent)
         self.setAcceptDrops(True)
         self.setPlaceholderText("请输入目录路径")
@@ -36,7 +36,7 @@ class DirPathEdit(QLineEdit):
         self.p.dir_changed.emit(v)
 
 
-class GDirPathWidget(QWidget):
+class GDirPathEdit(QWidget):
     dir_changed = Signal(str)
 
     def __init__(self, parent: None):
