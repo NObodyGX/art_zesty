@@ -182,6 +182,20 @@ class DTheme(object):
         #     "}",
         # ]
 
+        self.digf = Gss("QFileDialog")
+        self.digf.setv(f"background-color:{DTheme.g_bg_color};")
+
+        self.hedv = Gss("QHeaderView")
+        self.hedv.setv(f"color:{DTheme.g_color};")
+        self.hedv.setv(f"background-color:{DTheme.g_bg_color};")
+        self.hedv.setv(f"selection-color:{DTheme.g_color};")
+        self.hedv.setv(f"selection-background-color:{DTheme.g_bg_color};")
+
+        self.hdvs = Gss("QHeaderView::section")
+        self.hdvs.setv(f"border: none;")
+        self.hdvs.setv(f"color:{DTheme.g_color};")
+        self.hdvs.setv(f"background-color:{DTheme.g_bg_color};")
+
         # self.label = []
         # self.label_ext = [
         #     "GNumberLabel {",
@@ -211,6 +225,13 @@ class DTheme(object):
         #     f"  border-left: 3px solid {DTheme.g_left_select_color};",
         #     "}",
         # ]
+        self.liv = Gss("QListView")
+        self.liv.setv(f"color: {DTheme.g_color};")
+        self.liv.setv(f"background: {DTheme.g_bg_color};")
+
+        self.lit = Gss("QListView::item")
+        self.lit.setv(f"color: {DTheme.g_color};")
+        self.lit.setv(f"background: {DTheme.g_bg_color};")
 
         self.let = Gss("QLineEdit")
         self.let.setv(f"color: {DTheme.g_color};")
@@ -231,50 +252,46 @@ class DTheme(object):
         self.let.setv(f"color: {DTheme.g_color};", k="disabled")
         self.let.setv(f"background-color: {DTheme.g_bg_d_color};", k="disabled")
 
-        # self.scroll_area = [
-        #     "QScrollArea {",
-        #     "  border: none;",
-        #     "}",
-        # ]
+        self.scla = Gss("QScrollArea")
+        self.scla.setv("border: none;")
 
-        # self.scroll_bar = [
-        #     "QScrollBar:vertical {",
-        #     "  border: none;",
-        #     f"  background-color: {DTheme.g_bg_color};",
-        #     "  width: 10px;",
-        #     "  margin: 0px 0px 0px 0px;",
-        #     "}",
-        #     "QScrollBar::handle:vertical {",
-        #     "  border: none;",
-        #     f"  background-color: {DTheme.g_bg_d_color};",
-        #     "  min-width: 8px;",
-        #     "QScrollBar::sub-page:vertical,",
-        #     "QScrollBar::add-page:vertical {",
-        #     f"  background: {DTheme.g_bg_color};",
-        #     "}",
-        #     "QScrollBar::sub-line:vertical,",
-        #     "QScrollBar::add-line:vertical {",
-        #     f"  height: 0px;",
-        #     "}",
-        #     "QScrollBar:horizontal {",
-        #     "  border: none;",
-        #     f"  background-color: {DTheme.g_bg_color};",
-        #     "  width: 10px;",
-        #     "  margin: 0px 0px 0px 0px;",
-        #     "}",
-        #     "QScrollBar::handle:horizontal {",
-        #     "  border: none;",
-        #     f"  background-color: {DTheme.g_bg_d_color};",
-        #     "  min-width: 8px;",
-        #     "QScrollBar::sub-page:horizontal,",
-        #     "QScrollBar::add-page:horizontal {",
-        #     f"  background: {DTheme.g_bg_color};",
-        #     "}",
-        #     "QScrollBar::sub-line:horizontal,",
-        #     "QScrollBar::add-line:horizontal {",
-        #     f"  height: 0px;",
-        #     "}",
-        # ]
+        self.sclb = Gss("QScrollBar")
+        # vertical
+        self.sclb.setv("border: none;", k="vertical")
+        self.sclb.setv(f"background-color: {DTheme.g_bg_color};", k="vertical")
+        self.sclb.setv("width: 10px;", k="vertical")
+        self.sclb.setv("margin: 0px 0px 0px 0px;", k="vertical")
+        # horizontal
+        self.sclb.setv("border: none;", k="horizontal")
+        self.sclb.setv(f"background-color: {DTheme.g_bg_color};", k="horizontal")
+        self.sclb.setv("width: 10px;", k="horizontal")
+        self.sclb.setv("margin: 0px 0px 0px 0px;", k="horizontal")
+
+        self.sclh = Gss("QScrollBar::handle")
+        # vertical
+        self.sclh.setv("border: none;", k="vertical")
+        self.sclh.setv(f"background-color: {DTheme.g_bg_d_color};", k="vertical")
+        self.sclb.setv("min-width: 8px;", k="vertical")
+        # horizontal
+        self.sclh.setv("border: none;", k="horizontal")
+        self.sclh.setv(f"background-color: {DTheme.g_bg_d_color};", k="horizontal")
+        self.sclb.setv("min-width: 8px;", k="horizontal")
+        # sub-page
+        self.scl1 = Gss("QScrollBar::sub-page")
+        self.scl1.setv(f"background-color: {DTheme.g_bg_color};", k="vertical")
+        self.scl1.setv(f"background-color: {DTheme.g_bg_color};", k="horizontal")
+        self.scl2 = Gss("QScrollBar::add-page")
+        # add-page
+        self.scl2.setv(f"background-color: {DTheme.g_bg_color};", k="vertical")
+        self.scl2.setv(f"background-color: {DTheme.g_bg_color};", k="horizontal")
+        # sub-line
+        self.scl3 = Gss("QScrollBar::sub-line")
+        self.scl3.setv(f"background-color: {DTheme.g_bg_color};", k="vertical")
+        self.scl3.setv(f"background-color: {DTheme.g_bg_color};", k="horizontal")
+        # add-line
+        self.scl4 = Gss("QScrollBar::add-line")
+        self.scl4.setv(f"background-color: {DTheme.g_bg_color};", k="vertical")
+        self.scl4.setv(f"background-color: {DTheme.g_bg_color};", k="horizontal")
 
         # self.slider = [
         #     "QSlider::groove:horizontal{ ",
@@ -292,6 +309,10 @@ class DTheme(object):
         #     "  background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #00dbde, stop:1 #f902ff);;}",
         #     "}",
         # ]
+
+        self.trvv = Gss("QTreeView")
+        self.trvv.setv(f"color: {DTheme.g_color};")
+        self.trvv.setv(f"background: {DTheme.g_bg_color};")
 
         # self.tooltip = [
         #     "QToolTip {",
