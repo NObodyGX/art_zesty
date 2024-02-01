@@ -27,7 +27,8 @@ class Gss(object):
 class DTheme(object):
     g_color = "#ededed"
     g_bg_color = "#21252b"
-    g_bg_d_color = "#3b414d"
+    g_bg_d_color = "#3b414d"  # bg_board
+    g_bg_s_color = "#3e4451"  # bg_select
     g_hover_bg_color = "#262a31"
     g_left_select_color = "#528bff"
     g_border_color = "#ecdbba"
@@ -211,11 +212,24 @@ class DTheme(object):
         #     "}",
         # ]
 
-        # self.line_edit = [
-        #     "QLineEdit {",
-        #     "  background: transparent;",
-        #     "}",
-        # ]
+        self.let = Gss("QLineEdit")
+        self.let.setv(f"color: {DTheme.g_color};")
+        self.let.setv(f"background: {DTheme.g_bg_color};")
+        self.let.setv("outline: none;")
+        self.let.setv(f"border: 1px solid {DTheme.g_bg_d_color};")
+        self.let.setv(f"border: 1px solid {DTheme.g_bg_d_color};")
+        self.let.setv(f'font-family: "SF Mono SC";')
+        self.let.setv(f"font-size: 12pt;")
+
+        # 选中文本的背景色
+        self.let.setv(f"selection-background-color: {DTheme.g_bg_s_color};")
+        self.let.setv(f"selection-color: {DTheme.g_color};")
+        # 只读状态
+        self.let.setv(f"color: {DTheme.g_color};", k="read-only")
+        self.let.setv(f"background-color: {DTheme.g_bg_d_color};", k="read-only")
+        # 禁用状态
+        self.let.setv(f"color: {DTheme.g_color};", k="disabled")
+        self.let.setv(f"background-color: {DTheme.g_bg_d_color};", k="disabled")
 
         # self.scroll_area = [
         #     "QScrollArea {",

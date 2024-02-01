@@ -9,9 +9,11 @@
         "**/__pycache__": true,
     },
     "python.autoComplete.extraPaths": [
-        "C:/ProgramX/dev/python/python_main_3116/Lib/site-packages/PySide6"
+        "C:/ProgramX/dev/python/python_main_3116/Lib/site-packages/PySide6",
+        "C:/ProgramX/dev/python/python_main_3116/Lib/site-packages/PySide6-stubs"
     ],
     "python.analysis.extraPaths": [
-        "C:/ProgramX/dev/python/python_main_3116/Lib/site-packages/PySide6"
+        "C:/ProgramX/dev/python/python_main_3116/Lib/site-packages/PySide6",
+        "C:/ProgramX/dev/python/python_main_3116/Lib/site-packages/PySide6-stubs"
     ]
 }
