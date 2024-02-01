@@ -28,6 +28,7 @@ class DirPathEdit(QLineEdit):
         pass
 
     def set_text(self, v: str):
+        v = os.path.normpath(v)
         self.setText(v)
         self.on_text_changed(v)
 
@@ -46,21 +47,37 @@ class GDirPathWidget(QWidget):
 
     def _setup_ui(self):
         self.w_center = DirPathEdit(self)
-        self.w_button = QPushButton("📂")
+        self.w_updown = QPushButton("🔙")
+        self.w_choice = QPushButton("📂")
+
+        # 减去上下线宽度
+        self.w_updown.setFixedHeight(self.w_center.height() - 2)
+        self.w_updown.setFixedWidth(self.w_center.height() - 2)
+        self.w_choice.setFixedHeight(self.w_center.height() - 2)
+        self.w_choice.setFixedWidth(self.w_center.height() - 2)
 
         layout = UWorker.hlayout()
         layout.addWidget(self.w_center)
-        layout.addWidget(self.w_button)
+        layout.addWidget(self.w_updown)
+        layout.addWidget(self.w_choice)
         self.setLayout(layout)
 
     def _setup_fn(self):
-        self.w_button.clicked.connect(self._on_dir_clicked)
+        self.w_updown.clicked.connect(self._on_back_clicked)
+        self.w_choice.clicked.connect(self._on_cdir_clicked)
 
-    def _on_dir_clicked(self):
+    def _on_back_clicked(self):
+        cdir = self.v()
+        ndir = os.path.dirname(cdir)
+        if not ndir:
+            return
+        self.w_center.set_text(ndir)
+
+    def _on_cdir_clicked(self):
         cdir = QFileDialog.getExistingDirectory(self, "选择文件路径", ".")
         if not cdir:
             return
-        self.w_center.set_text(os.path.normpath(cdir))
+        self.w_center.set_text(cdir)
 
     def v(self) -> str:
         cdir = self.w_center.text()
