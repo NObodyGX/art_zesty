@@ -2,11 +2,12 @@ from functools import partial
 from PySide6.QtCore import Signal, Qt
 from PySide6.QtGui import QWheelEvent, QCursor
 from PySide6.QtWidgets import QDialog, QGridLayout, QPushButton
+from framework.data.size import GSize
 
 from framework.label.b_label import GBLabel
 from framework.theme.worker import GThemeWorker
 from framework.utils.u_worker import UWorker
-from framework.button.b_button import GGridLabelButton, GTOffButton
+from framework.button.b_button import GGridLabelButton, GOffButton
 
 
 class NumDialog(QDialog):
@@ -26,13 +27,14 @@ class NumDialog(QDialog):
     def _setup_ui(self):
         layout = UWorker.glayout()
         self.buttons = []
-        self.close_button = GTOffButton()
+        self.close_button = GOffButton()
         self.close_button.setFixedWidth(self.width())
+        self.close_button.setFixedHeight(GSize.grid_button_w_h)
         self.close_button.clicked.connect(lambda: self.close())
         layout.addWidget(self.close_button, 0, 0, 1, 10)
         for i in range(self.max_v):
             button = GGridLabelButton(str(i))
-            button.setFixedSize(32, 32)
+            button.setFixedSize(GSize.grid_button_w_h, GSize.grid_button_w_h)
             self.buttons.append(button)
             x = i / 10 + 1
             y = i % 10

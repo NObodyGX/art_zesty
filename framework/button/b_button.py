@@ -36,7 +36,7 @@ class GTCheckButton(GTitleButton):
 
 
 class GTMaxButton(GTitleButton):
-    """最大化按钮"""
+    """标题栏最大化按钮"""
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -47,17 +47,22 @@ class GTMaxButton(GTitleButton):
 
 
 class GTMinButton(GTitleButton):
-    """最小化按钮"""
+    """标题栏最小化按钮"""
 
     def __init__(self, parent=None):
         super().__init__(parent)
 
 
 class GTOffButton(GTitleButton):
-    """关闭按钮"""
+    """标题栏关闭按钮"""
 
     def __init__(self, parent=None):
         super().__init__(parent)
+
+
+class GOffButton(GBaseButton):
+    pass
+    """通用关闭按钮"""
 
 
 class GOKButton(GBaseButton):
