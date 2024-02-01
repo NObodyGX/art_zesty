@@ -1,0 +1,17 @@
+build
+_build
+dist
+*.exe
+test
+
+__pycache__
+
+
+env/
+genv/
+
+*.pyd
+*.pyi
+*.mp4
+
+*.toml

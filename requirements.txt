@@ -1,0 +1,5 @@
+PySide6
+IceSpringPySideStubs-PySide6
+pywin32
+tomli
+tomli_w
