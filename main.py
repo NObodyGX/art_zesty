@@ -10,7 +10,7 @@ from framework.button.b_button import (
     GOKButton,
     GNOButton,
 )
-from framework.theme.worker import GThemeWorker
+from framework.theme.worker import GThemeWorker, GThemeEnum
 from framework.widgets.dirpath_widget import GDirPathEdit
 from framework.window.b_window import GBaseWindow
 from framework.label.number_label import GNumberLabel
@@ -40,6 +40,6 @@ class GMWindow(GBaseWindow):
 if __name__ == "__main__":
     app = QApplication()
     win = GMWindow(None)
-    GThemeWorker.apply(win, theme="default")
+    GThemeWorker.apply(win, theme=GThemeWorker.GThemeEnum.light)
     win.show()
     sys.exit(app.exec())
