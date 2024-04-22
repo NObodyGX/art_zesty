@@ -43,10 +43,27 @@ class GDefaultTheme(object):
     g_no_color = "#f92f60"
 
     def __init__(self):
+        self.init_widget()
+        self.init_button()
+        self.init_combox()
+        self.init_checkbox()
+        self.init_dialog()
+        self.init_header_view()
+        self.init_list_widget()
+        self.init_line_edit()
+        self.init_scroll()
+        self.init_slide()
+        self.init_tree_widget()
+        self.init_tooltip()
+        self.init_menu()
+        self.init_custom()
+
+    def init_widget(self):
         self.widget = Gss("QWidget")
         self.widget.setv(f"background-color: {self.g_bg_color}")
         self.widget.setv(f"color: {self.g_color}")
 
+    def init_button(self):
         self.button = Gss("QPushButton")
         self.button.setv("border: none")
         self.button.setv("border-radius: none")
@@ -114,6 +131,7 @@ class GDefaultTheme(object):
         self.btn9.setv(f"color: {self.g_off_d_color}", k="pressed")
         self.btn9.setv(f"background-color: {self.g_off_d_color}", k="pressed")
 
+    def init_combox(self):
         self.combox = Gss("QComboBox")
         self.combox.setv("background: transparent")
         self.combox.setv("height: 42px")
@@ -166,12 +184,15 @@ class GDefaultTheme(object):
         self.combox_ab_item.setv(f"background: {self.g_select_bg_color}", k="selected")
         self.combox_ab_item.setv(f"padding-left: 4px", k="selected")
 
+    def init_checkbox(self):
         self.checkbox = Gss("QCheckBox")
         self.checkbox.setv(f"color: {self.g_color}")
 
+    def init_dialog(self):
         self.file_dialog = Gss("QFileDialog")
         self.file_dialog.setv(f"background-color:{self.g_bg_color}")
 
+    def init_header_view(self):
         self.header_view = Gss("QHeaderView")
         self.header_view.setv(f"color:{self.g_color}")
         self.header_view.setv(f"background-color:{self.g_bg_color}")
@@ -183,10 +204,7 @@ class GDefaultTheme(object):
         self.header_view_section.setv(f"color:{self.g_color}")
         self.header_view_section.setv(f"background-color:{self.g_bg_color}")
 
-        self.lab1 = Gss("GNumberLabel")
-        self.lab1.setv(f"color:{self.g_color}")
-        self.lab1.setv(f"background:{self.g_bg_color}")
-
+    def init_list_widget(self):
         self.list_widget = Gss("QListWidget")
         self.list_widget.setv(f"color:{self.g_color}")
         self.list_widget.setv(f"background:{self.g_bg_color}")
@@ -211,6 +229,7 @@ class GDefaultTheme(object):
         self.list_view_item.setv(f"color: {self.g_color}")
         self.list_view_item.setv(f"background: {self.g_bg_color}")
 
+    def init_line_edit(self):
         self.line_edit = Gss("QLineEdit")
         self.line_edit.setv(f"color: {self.g_color}")
         self.line_edit.setv(f"background: {self.g_bg_color}")
@@ -219,7 +238,6 @@ class GDefaultTheme(object):
         self.line_edit.setv(f"border: 1px solid {self.g_bg_d_color}")
         self.line_edit.setv(f'font-family: "SF Mono SC"')
         self.line_edit.setv(f"font-size: 12pt")
-
         # 选中文本的背景色
         self.line_edit.setv(f"selection-background-color: {self.g_bg_s_color}")
         self.line_edit.setv(f"selection-color: {self.g_color}")
@@ -230,6 +248,7 @@ class GDefaultTheme(object):
         self.line_edit.setv(f"color: {self.g_color}", k="disabled")
         self.line_edit.setv(f"background-color: {self.g_bg_d_color}", k="disabled")
 
+    def init_scroll(self):
         self.scroll_area = Gss("QScrollArea")
         self.scroll_area.setv("border: none")
 
@@ -291,6 +310,7 @@ class GDefaultTheme(object):
             f"background-color: {self.g_bg_color}", k="horizontal"
         )
 
+    def init_slide(self):
         self.slide_groove = Gss("QSlider::groove")
         self.slide_groove.setv(f"background-color: {self.g_bg_color}", k="horizontal")
         self.slide_groove.setv("height: 10px", k="horizontal")
@@ -306,14 +326,16 @@ class GDefaultTheme(object):
 
         self.slide_subpage = Gss("QSlider::sub-page")
         self.slide_subpage.setv(
-            "background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #00dbde, stop:1 #f902ff);;}",
+            "background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #00dbde, stop:1 #f902ff)",
             k="horizontal",
         )
 
+    def init_tree_widget(self):
         self.tree_view = Gss("QTreeView")
         self.tree_view.setv(f"color: {self.g_color}")
         self.tree_view.setv(f"background: {self.g_bg_color}")
 
+    def init_tooltip(self):
         self.tooltip = Gss("QToolTip")
         self.tooltip.setv(f"color: {self.g_color}")
         self.tooltip.setv(f"background: {self.g_bg_color}")
@@ -323,6 +345,7 @@ class GDefaultTheme(object):
         self.tooltip.setv(f"margin: 0px")
         self.tooltip.setv("min-width:140")
 
+    def init_menu(self):
         self.menu_bar = Gss("QMenuBar")
         self.menu_bar.setv(f"background: {self.g_bg_color}")
         self.menu_bar.setv(f"color: {self.g_color}")
@@ -367,6 +390,11 @@ class GDefaultTheme(object):
         self.menu_indicator.setv("padding: 2px 2px 2px 2px", k="checked")
         self.menu_indicator.setv("height: 12px", k="checked")
         self.menu_indicator.setv("width: 12px", k="checked")
+
+    def init_custom(self):
+        self.lab1 = Gss("GNumberLabel")
+        self.lab1.setv(f"color:{self.g_color}")
+        self.lab1.setv(f"background:{self.g_bg_color}")
 
     def theme(self):
         content = ""

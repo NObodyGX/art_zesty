@@ -40,6 +40,6 @@ class GMWindow(GBaseWindow):
 if __name__ == "__main__":
     app = QApplication()
     win = GMWindow(None)
-    GThemeWorker.apply(win, theme=GThemeWorker.GThemeEnum.light)
+    GThemeWorker.apply(win, theme=GThemeWorker.GThemeEnum.default)
     win.show()
     sys.exit(app.exec())
