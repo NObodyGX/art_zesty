@@ -4,11 +4,11 @@ from PySide6.QtCore import Signal
 from framework.data.size import GSize
 
 
-class GBaseButton(QPushButton):
+class GButton(QPushButton):
     pass
 
 
-class GPlayButton(GBaseButton):
+class GPlayButton(GButton):
     def __init__(self, func):
         super().__init__()
         self.setFixedSize(32, 32)
@@ -19,7 +19,7 @@ class GPlayButton(GBaseButton):
         self.setDown(not is_playing)
 
 
-class GTitleButton(GBaseButton):
+class GTitleButton(GButton):
     """标题按钮"""
 
     def __init__(self, parent=None):
@@ -60,24 +60,24 @@ class GTOffButton(GTitleButton):
         super().__init__(parent)
 
 
-class GOffButton(GBaseButton):
+class GOffButton(GButton):
     pass
     """通用关闭按钮"""
 
 
-class GOKButton(GBaseButton):
+class GOKButton(GButton):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setFixedSize(42, 24)
 
 
-class GNOButton(GBaseButton):
+class GNOButton(GButton):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setFixedSize(42, 24)
 
 
-class GCheckButton(GBaseButton):
+class GCheckButton(GButton):
     state_changed_signal = Signal(bool)
 
     def __init__(self):
@@ -105,9 +105,9 @@ class GArrowButton(GCheckButton):
     pass
 
 
-class GFontButton(GBaseButton):
+class GFontButton(GButton):
     pass
 
 
-class GGridLabelButton(GBaseButton):
+class GGridLabelButton(GButton):
     pass

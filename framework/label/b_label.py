@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QLabel, QColorDialog, QWidget, QLineEdit
 from PySide6.QtCore import Signal
 from PySide6.QtGui import Qt, QColor, QPainter
-from framework.button.b_button import GBaseButton
+from framework.button.b_button import GButton
 
 from framework.data import GSize
 from framework.utils import UWorker
@@ -31,7 +31,7 @@ class GLineLabel(QWidget):
         self.label = GLineNameLabel(text)
         self.editor = QLineEdit()
         self.editor.setHidden(True)
-        self.button_ok = GBaseButton()
+        self.button_ok = GButton()
         self.button_ok.setHidden(True)
         edit_layout = UWorker.hlayout()
         edit_layout.addWidget(self.editor)
